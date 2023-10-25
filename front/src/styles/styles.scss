@@ -1,0 +1,151 @@
+.App {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  font-family: Arial, sans-serif;
+}
+
+@mixin input-styles {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+@mixin btn {
+  padding: 8px 20px;
+  font-size: 14px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.chat-data-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+}
+
+.input-data-container {
+  width: 200px;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.room-form {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  input {
+    @include input-styles();
+  }
+  button {
+    @include btn();
+  }
+}
+
+.room-list {
+  height: calc(100% - 120px);
+  &-reload {
+    cursor: pointer;
+    margin-left: 10px;
+    color: #004bae;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    overflow-y: auto;
+    height: 100%;
+  }
+  li {
+    margin-bottom: 10px;
+    .room-btn {
+      width: 100%;
+      @include btn();
+      &-active {
+        width: 100%;
+        @include btn();
+        background-color: #006703;
+      }
+    }
+  }
+}
+
+.chat-container {
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 5px;
+  position: relative;
+  p {
+    height: 10px;
+    margin: 0 !important;
+  }
+}
+
+.messages {
+  height: 100%;
+  overflow-y: auto;
+  padding-bottom: 50px;
+  box-sizing: border-box;
+}
+
+.message {
+  margin-bottom: 10px;
+}
+
+.input-container {
+  position: absolute;
+  bottom: 10px;
+  display: flex;
+  width: calc(100% - 40px);
+  input {
+    width: 100%;
+    margin-right: 10px;
+    @include input-styles();
+  }
+  button {
+    @include btn();
+  }
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    position: relative;
+  }
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+body {
+  margin: 0;
+}

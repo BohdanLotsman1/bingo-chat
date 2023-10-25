@@ -1,0 +1,26 @@
+# Node.js files
+node_modules/
+
+# macOS files
+.DS_Store
+
+# Compiled files
+dist/
+build/
+
+# Log files
+*.log
+
+# Editor-specific files
+.vscode/
+.idea/
+
+# Environment files
+.env
+
+# Dependency lock files
+yarn.lock
+package-lock.json
+
+# OS-generated files
+Thumbs.db

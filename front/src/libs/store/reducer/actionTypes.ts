@@ -1,0 +1,13 @@
+export const GET_ACTIVE_ROOMS = 'GET_ACTIVE_ROOMS';
+export const GET_ACTIVE_ROOMS_SUCCESS = 'GET_ACTIVE_ROOMS_SUCCESS';
+export const GET_ACTIVE_ROOMS_ERROR = 'GET_ACTIVE_ROOMS_ERROR';
+
+export const SET_NICK = 'SET_NICK';
+
+export const SET_ROOM = 'SET_ROOM';
+
+export const SET_MESSAGES = 'SET_MESSAGES';
+
+export const SET_USER_ID = 'SET_USER_ID';
+
+export const CLEAN_ERROR = 'CLEAN_ERROR';
