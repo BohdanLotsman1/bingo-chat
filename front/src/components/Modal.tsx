@@ -13,10 +13,14 @@ export const Modal: React.FC<Props> = ({ isOpen, onClose, children }) => {
   return createPortal(
     <div className="modal">
       <div className="modal-content">
-        {onClose && <span className="close-button" onClick={onClose}>&times;</span>}
+        {onClose && (
+          <span className="close-button" onClick={onClose}>
+            &times;
+          </span>
+        )}
         {children}
       </div>
     </div>,
-    document.body // Render the modal content in the document body
+    document.body
   );
 };

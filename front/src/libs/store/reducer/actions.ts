@@ -1,5 +1,14 @@
 import { IMessage } from "../../../types";
-import { CLEAN_ERROR, GET_ACTIVE_ROOMS, GET_ACTIVE_ROOMS_ERROR, GET_ACTIVE_ROOMS_SUCCESS, SET_MESSAGES, SET_NICK, SET_ROOM, SET_USER_ID } from "./actionTypes";
+import {
+  CLEAN_ERROR,
+  GET_ACTIVE_ROOMS,
+  GET_ACTIVE_ROOMS_ERROR,
+  GET_ACTIVE_ROOMS_SUCCESS,
+  SET_MESSAGES,
+  SET_NICK,
+  SET_ROOM,
+  SET_USER_ID,
+} from "./actionTypes";
 
 export const getActiveRooms = () => ({
   type: GET_ACTIVE_ROOMS,
@@ -12,7 +21,7 @@ export const getActiveRoomsSuccess = (payload: string[]) => ({
 
 export const getActiveRoomsError = (payload: string) => ({
   type: GET_ACTIVE_ROOMS_ERROR,
-  payload
+  payload,
 });
 
 export const cleanError = () => ({

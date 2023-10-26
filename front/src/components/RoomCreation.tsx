@@ -13,6 +13,7 @@ export const RoomCreation: React.FC = () => {
   };
 
   const joinRoom = (room: string) => () => {
+    if (!room.trim()) return;
     socket.emit("joinRoom", room);
     setRoomName("");
   };
@@ -29,6 +30,7 @@ export const RoomCreation: React.FC = () => {
       <input
         type="text"
         placeholder="Enter room name"
+        maxLength={55}
         value={roomName}
         onChange={handleChange}
       />

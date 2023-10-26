@@ -11,7 +11,3 @@ export const userIdSelector = (state: State) => state.uniqueUserId;
 export const isRoomsFetchingSelector = (state: State) => state.isRoomsFetching;
 
 export const roomSelector = (state: State) => state.room;
-
-
-
-

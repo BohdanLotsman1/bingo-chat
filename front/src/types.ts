@@ -2,6 +2,7 @@ export interface IMessage {
   message: string;
   nick: string;
   room?: string;
+  userId: string;
 }
 
 export interface Actions {
@@ -11,11 +12,11 @@ export interface Actions {
 }
 
 export interface InitialState {
-  activeRooms: Array<string>,
-  nick: string,
-  error: string,
-  isRoomsFetching: boolean,
-  messages: Array<IMessage>,
-  uniqueUserId: string,
-  room: string,
+  activeRooms: Array<string>;
+  nick: string;
+  error: string;
+  isRoomsFetching: boolean;
+  messages: Array<IMessage>;
+  uniqueUserId: string;
+  room: string;
 }

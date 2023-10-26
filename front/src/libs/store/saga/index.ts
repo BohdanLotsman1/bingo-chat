@@ -1,15 +1,15 @@
-import { all, call, put, takeEvery } from 'redux-saga/effects';
-import { ApiService } from '../services/ApiService';
-import { getActiveRoomsError, getActiveRoomsSuccess } from '../reducer/actions';
-import { GET_ACTIVE_ROOMS } from '../reducer/actionTypes';
+import { all, call, put, takeEvery } from "redux-saga/effects";
+import { ApiService } from "../services/ApiService";
+import { getActiveRoomsError, getActiveRoomsSuccess } from "../reducer/actions";
+import { GET_ACTIVE_ROOMS } from "../reducer/actionTypes";
 
-const api = new ApiService()
+const api = new ApiService();
 function* fetchRooms() {
   try {
     const { data } = yield call(api.getRooms);
     yield put(getActiveRoomsSuccess(data));
   } catch (error) {
-    yield put(getActiveRoomsError('room fetching error'));
+    yield put(getActiveRoomsError("room fetching error"));
   }
 }
 
@@ -18,7 +18,5 @@ function* watchFetchData() {
 }
 
 export default function* rootSaga() {
-  yield all([
-    watchFetchData(),
-  ]);
+  yield all([watchFetchData()]);
 }

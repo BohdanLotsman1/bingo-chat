@@ -2,7 +2,11 @@ import React, { useEffect, useState } from "react";
 import { socket } from "../libs/socket";
 import { useDispatch, useSelector } from "react-redux";
 import { getActiveRooms, setRoom } from "../libs/store/reducer/actions";
-import { activeRoomsSelector, isRoomsFetchingSelector, roomSelector } from "../libs/store/selectors";
+import {
+  activeRoomsSelector,
+  isRoomsFetchingSelector,
+  roomSelector,
+} from "../libs/store/selectors";
 import "../styles/styles.scss";
 
 export const ActiveRoomList: React.FC = () => {
@@ -29,20 +33,22 @@ export const ActiveRoomList: React.FC = () => {
     <div className="room-list">
       <h5>
         List of active rooms{" "}
-        {!isLoading &&  <span onClick={handleRefetch} className="room-list-reload">
-          &#x21bb;
-        </span>}
+        {!isLoading && (
+          <span onClick={handleRefetch} className="room-list-reload">
+            &#x21bb;
+          </span>
+        )}
       </h5>
       <ul>
         {activeRooms.map((activeRoom: string, index: number) => (
           <li key={index}>
             <button
-              className={`room-btn${
-                currentRoom === activeRoom ? "-active" : ""
+              className={`room-btn ${
+                currentRoom === activeRoom ? "room-btn-active" : ""
               }`}
               onClick={() => joinRoom(activeRoom)}
             >
-              {activeRoom}
+              <span>{activeRoom}</span>
             </button>
           </li>
         ))}
